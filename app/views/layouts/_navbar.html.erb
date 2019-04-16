@@ -1,19 +1,29 @@
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Mi tienda Online</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- Marca de la Tienda -->
-  <a class="navbar-brand" href="#">Mi Tienda Online</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class = "btn">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class = "btn">
+          <a class="nav-link" href="#">Mi Carro</a>
+        </li>
+      </ul>
+      <ul class=" navbar-nav justify-content-end">
+        <% if user_signed_in? %>
 
-  <!-- Opciones de Usuario -->
-  <div class="collapse navbar-collapse justify-content-end">
-    <ul class="navbar-nav">
-      <% if user_signed_in? %>
-        <a>Hola, </a><%= link_to current_user.email %>
-        <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" %>
-      <%else%>
-        <%= link_to 'Iniciar Sesión', new_user_session_path, class: "btn btn-success btn-sm" %>
-      <%end%>
-    </ul>
+          <li class = "btn">Hola, <%= current_user.email %></li>
+          <li class = "btn"><%= link_to 'Mi Cuenta', edit_user_registration_path, class: "btn btn-warning btn-sm" %></li>
+          <li class = "btn"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" %></li>
+        <%else%>
+          <li class = "btn"><%= link_to 'Iniciar Sesión', new_user_session_path, class: "btn btn-success btn-sm" %></li>
+          <li class = "btn"><%= link_to'Registrarse', new_user_registration_path, class: "btn btn-warning btn-sm" %></li>
+        <%end%>
+      </ul>
+    </nav>
+  </div>
   </nav>

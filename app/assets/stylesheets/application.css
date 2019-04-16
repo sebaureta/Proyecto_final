@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.showuser {
+  color: #E6E6E6;
+}
+
+.btn{
+margin-left:3px;
+}
