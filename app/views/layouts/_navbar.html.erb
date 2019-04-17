@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Mi tienda Online</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
       <ul class=" navbar-nav justify-content-end">
         <% if user_signed_in? %>
 
-          <li class = "btn">Hola, <%= current_user.email %></li>
+          <li class = "showuser btn">Hola, <%= current_user.name %></li>
           <li class = "btn"><%= link_to 'Mi Cuenta', edit_user_registration_path, class: "btn btn-warning btn-sm" %></li>
           <li class = "btn"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" %></li>
         <%else%>
@@ -26,4 +26,3 @@
       </ul>
     </nav>
   </div>
-  </nav>
