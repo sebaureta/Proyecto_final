@@ -20,10 +20,14 @@
 
 }
 
+#logincenter{
+  text-align: center;
+}
+
 .btn{
 margin-left:3px;
 }
 
-.col-md-4{
+.col-md-3{
   margin-top: 15px;
 }
