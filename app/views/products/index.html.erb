@@ -8,10 +8,9 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><%= product.name %></h5>
-            <p class="card-text"><%= product.description %></p>
-            <p>Precio: <%= product.price %></p>
-            <p><%= link_to 'Show', product %>
+            <h6 class="card-title text-center"><%= product.name %></h6>
+            <p class="text-center">Precio: <%= product.price %></p>
+            <p class="text-center"><%= link_to 'Show', product %>
                <%= link_to 'Edit', edit_product_path(product) %>
                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
             </p>
