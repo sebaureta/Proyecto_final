@@ -30,10 +30,13 @@ margin-left:3px;
 
 .col-md-3{
   margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .card {
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+
 }
