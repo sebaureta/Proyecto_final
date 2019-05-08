@@ -1,4 +1,4 @@
-
+<header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Mi tienda Online</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
           <li class = "btn">
             <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class = "btn">
+          <li class = "btn col-12">
             <a class="nav-link" href="<%= orders_path %>">Mi Carro</a>
           </li>
         </ul>
@@ -21,14 +21,15 @@
             <% if current_user.avatar.attached? %>
               <%= image_tag current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle" %>
             <% else %>
-              <%= image_tag gravatar_image_url(current_user.email, size: 50), height: 50, width: 50, class: "rounded-circle" %>
+              <%= image_tag gravatar_image_url(current_user.email, size: 10), class: "rounded-circle col-3" %>
             <% end %>
-            <li class = "btn"><%= link_to 'Mi Cuenta', edit_user_registration_path, class: "btn btn-warning btn-sm" %></li>
-            <li class = "btn"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" %></li>
+            <li class = "btn"><%= link_to 'Mi Cuenta', edit_user_registration_path, class: "btn btn-warning col-12" %></li>
+            <li class = "btn"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-danger col-12" %></li>
           <%else%>
-            <li class = "btn"><%= link_to 'Iniciar Sesión', new_user_session_path, class: "btn btn-success btn-sm" %></li>
-            <li class = "btn"><%= link_to 'Registrarse', new_user_registration_path, class: "btn btn-warning btn-sm" %></li>
+            <li class = "btn"><%= link_to 'Iniciar Sesión', new_user_session_path, class: "btn btn-success col-12" %></li>
+            <li class = "btn"><%= link_to 'Registrarse', new_user_registration_path, class: "btn btn-warning col-12" %></li>
           <%end%>
         </ul>
       </nav>
     </div>
+</header>
