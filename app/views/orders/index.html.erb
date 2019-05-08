@@ -1,0 +1,13 @@
+<table class="table">
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.product.name %></td>
+    <td>$ <%= order.product.price %></td>
+    <td></td>
+  </tr>
+<% end %>
+<tr>
+  <td> Total: </td>
+  <td>$ <%= @orders.map{|order| order.product.price }.sum %></td>
+</tr>
+</table>
