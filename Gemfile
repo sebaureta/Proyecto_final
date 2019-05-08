@@ -54,6 +54,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
   gem "mini_magick"
+  gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 end
 
 group :test do
@@ -64,6 +65,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
   gem "mini_magick"
+  gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 end
 
 group :production do
@@ -71,6 +73,7 @@ group :production do
   gem 'rails_12factor'
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
   gem "mini_magick"
+  gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
