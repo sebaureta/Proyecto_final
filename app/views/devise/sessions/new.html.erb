@@ -1,11 +1,7 @@
 <div class="container w-100">
-  <div class="row">
-    <div class="offset-md-4">
-    </div>
-    <div class="col-md-4" id="logincenter">
-      <br><br><br>
-      <h2 id="logincenter"> Log In </h2>
+   <div class="row justify-content-center">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <h2 id ="logincenter"> Log In </h2>
         <div class="field">
           <br>
           <%= f.label :email %><br />
@@ -30,8 +26,5 @@
         </div>
       <% end %>
        <br>
-    </div>
-    <div class="offset-md-4">
-    </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
     <div class="row">
       <% @products.each_slice(4) do |row| %>
         <% row.each do |product| %>
-          <div class="col">
+          <div class="col-md-3">
             <div class="card">
               <%= image_tag product.image.variant(resize: "150x150!"), class: "card-img-top" %>
               <div class="body">
