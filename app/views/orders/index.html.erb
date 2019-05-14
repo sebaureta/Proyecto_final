@@ -5,7 +5,7 @@
       <tr>
         <td><%= order.product.name %></td>
         <td>$ <%= order.product.price %></td>
-        <td>  <%= link_to 'Eliminar Producto', order, method: :delete, class: "btn btn-danger" %></td>
+        <td>  <%= link_to 'Eliminar Producto', order, method: :delete, remote: true, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
     <tr>
