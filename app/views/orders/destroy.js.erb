@@ -1,1 +1,18 @@
-swal("Bien!", "Se ha elimnado el producto de tu carro!", "success");
+swal({
+  title: "Estás seguro?",
+  text: "Si lo borras, puedas agregarlo nuevamente en la lista de productos !",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    <% @orders = Order.find(params[:id]) %>
+    <% @orders.destroy %>
+    swal("Boom! EL producto  fue eliminado del carro!", {
+      icon: "success",
+    });
+  } else {
+    swal("Tu producto continúa en el carro!");
+  }
+});

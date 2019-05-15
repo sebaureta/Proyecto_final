@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row">
+    <div id="refresh">
     <table class="table">
-    <% @orders.each do |order| %>
+      <% @orders.each do |order| %>
+          <tr>
+            <td>  <%= order.product.name %> </td>
+            <td>$ <%= order.product.price %> </td>
+            <td>  <%= link_to image_tag('botondelete.png', :size => "30x30"), order, method: :delete, remote: true %></td>
+          </tr>
+      <% end %>
       <tr>
-        <td><%= order.product.name %></td>
-        <td>$ <%= order.product.price %></td>
-        <td>  <%= link_to 'Eliminar Producto', order, method: :delete, remote: true, class: "btn btn-danger" %></td>
+        <td> Total: </td>
+        <td>$ <%= @orders.map{|order| order.product.price }.sum %></td>
       </tr>
-    <% end %>
-    <tr>
-      <td> Total: </td>
-      <td>$ <%= @orders.map{|order| order.product.price }.sum %></td>
-    </tr>
-    </table>
+      </table>
+    </div>
   </div>
 </div>
