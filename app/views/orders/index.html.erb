@@ -6,7 +6,7 @@
           <tr>
             <td>  <%= order.product.name %> </td>
             <td>$ <%= order.product.price %> </td>
-            <td>  <%= link_to image_tag('botondelete.png', :size => "30x30"), order, method: :delete, remote: true %></td>
+            <td><%= link_to image_tag('botondelete.png', :size => "30x30"), order, method: :delete, remote: true, id: "alert", data: {confirm: 'hola'} %></td>
           </tr>
       <% end %>
       <tr>
