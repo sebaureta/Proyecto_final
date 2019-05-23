@@ -1,5 +1,6 @@
 # Routes
 Rails.application.routes.draw do
+  get 'admins/index'
   get 'orders/create'
 
   resources :products do
