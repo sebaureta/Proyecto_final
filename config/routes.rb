@@ -1,7 +1,9 @@
 # Routes
 Rails.application.routes.draw do
-  get 'admins/index'
   get 'orders/create'
+
+  resources :admins do
+  end
 
   resources :products do
     resources :orders, only: :create

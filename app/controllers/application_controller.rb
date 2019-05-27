@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.admin?
-      return admins_index_url
+      admins_path
     else
-      return products_path
+      products_path
     end
   end
 

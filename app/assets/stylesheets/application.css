@@ -31,14 +31,14 @@
         float: none;
         margin-bottom: 15px;}
 
-
+#footer{
+  height: 100%;
+}
         footer {
             background-color:  grey;
             width: 100%;
             padding: 30px;
-            clear: both;
-            position: absolute;
-            margin-top: -40px;
+            position: relative;
         }
 
         ul.social-network {

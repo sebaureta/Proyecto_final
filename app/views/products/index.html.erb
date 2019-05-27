@@ -14,7 +14,7 @@
                 <%= link_to 'Edit', edit_product_path(product) %>
                 <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% if user_signed_in?%>
-                  <%= link_to 'Comprar', product_orders_path(product), class: 'btn btn-success', method: :post %>
+                  <%= link_to 'Agregar al Carro', product_orders_path(product), class: 'btn btn-success', method: :post %>
                 <% end %>
               </div>
             </div>
