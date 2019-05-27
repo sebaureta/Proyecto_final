@@ -18,11 +18,10 @@ class OrdersController < ApplicationController
   def destroy
     @orders = Order.find(params[:id])
     @orders.destroy
-    redirect_to orders_path if @orders.destroy
+    end
     respond_to do |format|
       format.js
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-end
