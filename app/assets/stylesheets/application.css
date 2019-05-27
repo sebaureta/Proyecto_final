@@ -31,10 +31,15 @@
         float: none;
         margin-bottom: 15px;}
 
-footer{
-  background-color: grey;
-  padding: 30px;
-}
+
+        footer {
+            background-color:  grey;
+            width: 100%;
+            padding: 30px;
+            clear: both;
+            position: absolute;
+            margin-top: -40px;
+        }
 
         ul.social-network {
         	list-style: none;
