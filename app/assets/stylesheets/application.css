@@ -31,8 +31,8 @@
         float: none;
         margin-bottom: 15px;}
 
-#footer{
-  height: 100%;
+.bodysize{
+  height: 75vh;
 }
         footer {
             background-color:  grey;

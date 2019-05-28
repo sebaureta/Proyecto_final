@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-
+  authorize_resource
   def create
     @product = Product.find(params[:product_id])
     @order = Order.new(product: @product, user: current_user)
