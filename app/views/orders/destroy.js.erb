@@ -1,8 +1,20 @@
-swal({
-  title: "Listo!",
-  text: "Producto eliminado de tu carro!",
-  icon: "success",
-  button: "Ok",
-});
 
-window.location.href = "<% orders_path %>";
+
+swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your imaginary file has been deleted!", {
+      icon: "success",
+    }).then(function() {
+        window.location = "<%= orders_path %>";
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});

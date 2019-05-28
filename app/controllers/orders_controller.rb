@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   authorize_resource
+
   def create
     @product = Product.find(params[:product_id])
     @order = Order.new(product: @product, user: current_user)
@@ -18,10 +19,10 @@ class OrdersController < ApplicationController
   def destroy
     @orders = Order.find(params[:id])
     @orders.destroy
-    end
     respond_to do |format|
       format.js
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+end
