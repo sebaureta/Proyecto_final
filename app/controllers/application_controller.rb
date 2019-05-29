@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do
     respond_to do |format|
-      format.html { redirect_to root_path, alert: 'No puedes ingresar a esta página'}
+      format.html { redirect_to root_path, alert: 'Lo siento!, No puedes realizar esta acción! :( '}
     end
   end
 
