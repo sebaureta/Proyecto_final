@@ -35,7 +35,7 @@
 .bodysize{
   height: 75vh;
 }
-  footer {
+footer {
       background-color:  grey;
       width: 100%;
       padding: 30px;
@@ -43,7 +43,7 @@
   }
 /* H6 id RRSS*/
 
-#follow-us h6{
+#follow-us{
   color: white;
 }
 

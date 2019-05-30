@@ -1,10 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.all.page(params[:page])
   end
 
   # GET /products/1
@@ -57,7 +56,7 @@ class ProductsController < ApplicationController
     authorize! :destroy, Product
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admins_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
