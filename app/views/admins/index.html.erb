@@ -1,4 +1,6 @@
   <div class="container">
+    <%= link_to 'Agregar Categoria', new_category_path %>
+    <%= link_to 'Agregar Producto', new_product_path %>
     <div class="row">
       <table class="table">
         <% @products.each do |product| %>

@@ -1,5 +1,6 @@
 # Routes
 Rails.application.routes.draw do
+  resources :categories
   get 'orders/create'
 
   resources :admins do
@@ -10,6 +11,12 @@ Rails.application.routes.draw do
   end
 
   resources :orders do
+  end
+
+  resources :categories do
+  end
+
+  resources :product_categories do
   end
 
   root to: 'products#index'
