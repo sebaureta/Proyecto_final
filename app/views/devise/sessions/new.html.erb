@@ -1,17 +1,16 @@
 <div class="container w-100 bodysize">
    <div class="row justify-content-center">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <h2 id ="logincenter"> Log In </h2>
         <div class="field">
           <br>
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control form-control-sm" %>
         </div>
 
         <div class="field">
           <br>
           <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
+          <%= f.password_field :password, autocomplete: "current-password", :class => "form-control form-control-sm" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
@@ -22,7 +21,7 @@
         <% end %>
 
         <div class="actions">
-          <%= f.submit "Log in" %>
+          <%= f.submit "Iniciar Sesión", :class => "form-control form-control-sm" %>
         </div>
 
       <% end %>
