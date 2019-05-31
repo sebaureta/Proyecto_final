@@ -9,4 +9,17 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
 
   has_one_attached :image
+
+  after_create :save_categories
+
+#Custom Setter
+  def categories=(value)
+    @categories = value
+  end
+
+  def save_categories
+    @categories.each do |category_id|
+      ProductCategory.create(category_id: category_id, product_id: self.id)
+    end
+  end
 end
