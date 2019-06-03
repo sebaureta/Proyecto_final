@@ -3,8 +3,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+  #  @productsi = Product.all.page(params[:page])
+  #  @categories = Category.all
+
+  @products = []
+  if params[:category]
+    @products = Category.find_by(name: params[:category]).products
+  else
     @products = Product.all.page(params[:page])
-    @categories = Category.all
+  end
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   # GET /products/1
