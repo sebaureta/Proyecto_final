@@ -16,4 +16,8 @@ class AdminsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def administration
+    @products = Product.all.page(params[:page])
+  end
 end

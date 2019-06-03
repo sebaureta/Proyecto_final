@@ -1,7 +1,9 @@
 # Routes
 Rails.application.routes.draw do
   resources :categories
+
   get 'orders/create'
+  get 'admins/administration'
 
   resources :admins do
   end

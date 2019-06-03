@@ -12,6 +12,8 @@ gem 'pg'
 gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# Jquery ujs
+gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,7 +58,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
-  gem "mini_magick"
   gem 'bootstrap', '~> 4.3', '>= 4.3.1'
   gem 'rails-erd'
 end
@@ -68,7 +69,6 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
-  gem "mini_magick"
   gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 end
 
@@ -76,7 +76,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
-  gem "mini_magick"
   gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 end
 
