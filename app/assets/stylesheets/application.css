@@ -12,12 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require sweetalert2
  */
 
 
 
 .showuser {
-            color: #FFFFFF;
             margin-top: 8px;}
 
 #logincenter{
@@ -31,10 +31,11 @@
 
 /* footer css */
 .bodysize{
-  height: 75vh;
+  height: 90vh;
 }
+
 footer {
-      background-color:  grey;
+      background-color:  lightgrey;
       width: 100%;
       padding: 30px;
       position: relative;
