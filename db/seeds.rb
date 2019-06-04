@@ -6,39 +6,83 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+c1 = Category.new(name: 'Deportes')
+c1.save
+
+c2 = Category.new(name: 'Peliculas')
+c2.save
+
+c3 = Category.new(name: 'Musica')
+c3.save
+
+c4 = Category.new(name: 'Video Juegos')
+c4.save
+
+c5 = Category.new(name: 'Electrónica')
+c5.save
+
 
 i1 = Product.new(name: 'Camiseta Juventus', description: 'Camiseta de Futbol', price: 14990)
 i1.image.attach(io: File.open('app/assets/images/camisetajuve.jpg'), filename: 'camisetajuve.jpg', content_type: 'image/jpg')
+i1.categories = ["1"]
 i1.save
 
 i2 = Product.new(name: 'Balon Premier League', description: 'Balón de Fútbol', price: 9990)
 i2.image.attach(io: File.open('app/assets/images/balon.jpeg'), filename: 'balon.jpeg', content_type: 'image/jpeg')
+i2.categories = ["1"]
 i2.save
 
 i3 = Product.new(name: 'Camiseta Barcelona', description: 'Camiseta de Futbol', price: 16990)
 i3.image.attach(io: File.open('app/assets/images/camisetabarca.jpg'), filename: 'camisetabarca.jpg', content_type: 'image/jpg')
+i3.categories = ["1"]
 i3.save
 
 i4 = Product.new(name: 'Camiseta Selección Chilena', description: 'Camiseta de Futbol', price: 19990)
 i4.image.attach(io: File.open('app/assets/images/camisetachile.jpeg'), filename: 'camisetachile.jpeg', content_type: 'image/jpeg')
+i4.categories = ["1"]
 i4.save
 
 i5 = Product.new(name: 'Camiseta Colo Colo', description: 'Camiseta de Futbol', price: 12990)
 i5.image.attach(io: File.open('app/assets/images/camistacolo.jpg'), filename: 'camistacolo.jpg', content_type: 'image/jpg')
+i5.categories = ["1"]
 i5.save
 
 i6 = Product.new(name: 'Camiseta Huachipato', description: 'Camiseta de Futbol', price: 9990)
 i6.image.attach(io: File.open('app/assets/images/camisetahuachi.jpeg'), filename: 'camisetahuachi.jpeg', content_type: 'image/jpeg')
+i6.categories = ["1"]
 i6.save
 
 i7 = Product.new(name: 'Zapatos Adidas', description: 'Zapatos de Futbol', price: 29990)
 i7.image.attach(io: File.open('app/assets/images/zapatofutbol2.jpg'), filename: 'zapatofutbol2.jpg', content_type: 'image/jpg')
+i7.categories = ["1"]
 i7.save
 
 i8 = Product.new(name: 'Zapatos Nike', description: 'Zapatos de Futbol', price: 29990)
 i8.image.attach(io: File.open('app/assets/images/zapatofutbol3.jpg'), filename: 'zapatofutbol3.jpg', content_type: 'image/jpg')
+i8.categories = ["1"]
 i8.save
 
 i9 = Product.new(name: 'Zapatos Nike', description: 'Zapatos de Futbol', price: 29990)
 i9.image.attach(io: File.open('app/assets/images/zapatofutbol.jpeg'), filename: 'zapatofutbol3.jpeg', content_type: 'image/jpeg')
+i9.categories = ["1"]
 i9.save
+
+i10 = Product.new(name: 'Venom', description: 'Pelicula Marvel', price: 12990)
+i10.image.attach(io: File.open('app/assets/images/venom.jpg'), filename: 'venom.jpg', content_type: 'image/jpg')
+i10.categories = ["2"]
+i10.save
+
+i11 = Product.new(name: 'Han Solo', description: 'Pelicula Disney', price: 12990)
+i11.image.attach(io: File.open('app/assets/images/hansolo.jpg'), filename: 'hansolo.jpg', content_type: 'image/jpg')
+i11.categories = ["2"]
+i11.save
+
+i12 = Product.new(name: 'Tin Tin', description: 'Pelicula Disney', price: 12990)
+i12.image.attach(io: File.open('app/assets/images/tintin.jpeg'), filename: 'tintin.jpeg', content_type: 'image/jpg')
+i12.categories = ["2"]
+i12.save
+
+i13 = Product.new(name: 'Destiny 2', description: 'Juego PS4', price: 24990)
+i13.image.attach(io: File.open('app/assets/images/destiny2.jpeg'), filename: 'destiny2.jpeg', content_type: 'image/jpg')
+i13.categories = ["4"]
+i13.save

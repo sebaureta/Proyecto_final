@@ -15,7 +15,7 @@
             <div id="animated-example" class="animated bounceIn"  class="col-md-3">
               <div class="card">
                 <%= link_to product do %>
-                <%= image_tag product.image.variant(resize: "150x150!") , class: "card-img-top" %>
+                  <%= image_tag product.image.variant(resize: "150x150!"), class: "card-img-top" %>
                 <% end %>
                 <div class="body">
                   <p class="prodname"> <%= product.name %> </p>
