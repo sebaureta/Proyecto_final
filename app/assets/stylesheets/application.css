@@ -15,7 +15,38 @@
  *= require sweetalert2
  */
 
+#register {
+  background-color: #063d49;
+}
+.register{
+  color: white;
+  font-family: BebasKai;
+}
+h2.register{
+ text-align: center;
+}
 
+.form-control.form-control-sm{
+  background-color: transparent;
+}
+input#user_name.form-control.form-control-sm{
+  background-color: transparent;
+}
+input#user_email.form-control.form-control-sm{
+  background-color: transparent;
+}
+@font-face {
+    font-family: BebasKai;
+    src: url("fonts/BebasKai.otf");
+}
+
+
+#backlogin{
+  background-image: url('backlogin.jpg');
+}
+#loginback{
+  background-image: url('loginback.jpg');
+}
 
 .showuser {
             margin-top: 8px;}
@@ -35,9 +66,9 @@
 }
 
 footer {
-      background-color:  lightgrey;
+      background-color: lightgrey;
       width: 100%;
-      padding: 30px;
+      padding: 20px;
       position: relative;
   }
 /* H6 id RRSS*/
@@ -107,7 +138,7 @@ footer {
   	width: 50px;
   	height: 50px;
   	font-size:20px;
-  	background-color: #D3D3D3;
+  	background-color: lightgrey;
   }
   .social-circle li i {
   	margin:0;
