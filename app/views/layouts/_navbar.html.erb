@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,22 +16,28 @@
     <ul class=" navbar-nav ml-auto">
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <li class="btn"><%= link_to image_tag('hom2.png', :size => "40x40"), admins_path%></li>
+        <li class="btn">  <%= link_to admins_path, class: "btn btn-success col-12" do %>
+              <i class="fas fa-home"></i> Home <% end %>
         <% else %>
-          <li class="btn"><%= link_to image_tag('hom2.png', :size => "40x40"), root_path%></li>
-          <li class="btn"><%= link_to image_tag('carro.png', :size => "45x45"), orders_path%></li>
-        <% end %>
+        <li class="btn">  <%= link_to root_path, class: "btn btn-success col-12" do %>
+              <i class="fas fa-home"></i> Home <% end %></li>
+          <li class="btn">  <%= link_to orders_path, class: "btn btn-warning col-12" do %>
+                <i class="fas fa-shopping-cart"></i> Mi Carro <% end %></li>
+          <% end %>
       <% else %>
-        <li class = "btn">
-          <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
-        </li>
+      <li class="btn">  <%= link_to root_path, class: "btn btn-success col-12" do %>
+            <i class="fas fa-home"></i> Home <% end %></li>
       <% end %>
       <% if user_signed_in? %>
-        <li class = "btn"><%= link_to 'Mi Cuenta', edit_user_registration_path, class: "btn btn-warning col-12" %></li>
-        <li class = "btn"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-danger col-12" %></li>
+      <li class="btn">  <%= link_to edit_user_registration_path, class: "btn btn-warning col-12" do %>
+            <i class="fas fa-user"></i> Mi Cuenta <% end %></li>
+        <li class="btn">  <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-danger col-12" do %>
+              <i class="fas fa-times"></i> Cerrar Sesión <% end %></li>
       <%else%>
-        <li class = "btn"><%= link_to 'Iniciar Sesión', new_user_session_path, class: "btn btn-success col-12" %></li>
-        <li class = "btn"><%= link_to 'Registrarse', new_user_registration_path, class: "btn btn-warning col-12" %></li>
+      <li class="btn">  <%= link_to new_user_session_path, class: "btn btn-warning col-12" do %>
+            <i class="fas fa-user"></i> Iniciar Sesión<% end %></li>
+      <li class="btn">  <%= link_to new_user_registration_path, class: "btn btn-warning col-12" do %>
+            <i class="fas fa-user-plus"></i> Registrarse <% end %></li>
       <%end%>
     </ul>
   </div>
