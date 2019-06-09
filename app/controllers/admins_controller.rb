@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to admins_path, notice: 'El Producto ha sido eliminado de tu Tienda!' }
+      format.html { redirect_to admins_path, notice: 'El Producto ha sido eliminado de tu tienda!' }
       format.json { head :no_content }
     end
   end

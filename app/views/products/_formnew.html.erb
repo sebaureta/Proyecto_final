@@ -1,0 +1,47 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, :class => "form-control form-control-sm" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control form-control-sm" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: "form-control form-control-sm" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Image %>
+    <%= form.file_field :image, class: "form-control form-control-sm" %>
+  </div>
+  
+  <div class="field">
+    <label>Categorias</label>
+    <ul>
+    <% @categories.each do |category| %>
+       <%= check_box_tag "categories[]", category.id %> <%= category.name %>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Ingresar", :class => "btn btn-success col-md-12" %> <br>
+    <%= link_to 'Volver', admins_path, class: "btn btn-warning col-md-12" %>
+  </div>
+<% end %>
