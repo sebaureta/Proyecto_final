@@ -9,19 +9,22 @@
             <tr>
               <td>  <%= order.product.name %> </td>
               <td>$ <%= order.product.price %> </td>
-              <td><%= link_to image_tag('deletebtn.jpg', :size => "50x50"), order, method: :delete, data: {confirm: "Estás seguro?"}%></td>
+              <td>  <%= link_to order, method: :delete, data: {confirm: "Estás seguro?"} do %>
+                   <i class="fas fa-trash"></i><% end %></td>
             </tr>
         <% end %>
         <tr>
           <td> Total: </td>
           <td>$ <%= @orders.map{|order| order.product.price }.sum %></td>
+          <td></td>
         </tr>
       </table>
 
-      <%= link_to 'Volver', products_path, class: "btn btn-outline-secondary col-md-12" %>
+      <%= link_to 'Volver', products_path, class: "btn btn-warning col-md-12" %>
       </div>
     <div class="col-md-3">
 
     </div>
   </div>
+    <br><br>
 </div>

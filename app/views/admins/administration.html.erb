@@ -1,16 +1,31 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
     <table class="table">
       <% @products.each do |product| %>
           <tr>
             <td> <%= product.name %> </td>
             <td> <%= product.description %> </td>
             <td>$<%= product.price %> </td>
-            <td> <%= link_to 'Edit', edit_product_path(product) %> </td>
-            <td> <%= link_to image_tag('botondelete.png', :size => "30x30"), admin_path(product), method: :delete, remote: true, data: {confirm: 'Estás seguro de eliminar el producto?'} %></td>
+            <td>  <%= link_to edit_product_path(product) do %>
+                 <i class="fas fa-edit"></i><% end %></td>
+            <td>  <%= link_to admin_path(product), method: :delete, remote:true, data: {confirm: "Estás seguro de eliminar el producto?"} do %>
+                 <i class="fas fa-trash"></i><% end %></td>
           </tr>
       <% end %>
     </table>
   </div>
-  <%= link_to 'Volver', admins_path, class: "btn btn-outline-secondary " %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+          <%= link_to 'Volver', admins_path, class: "btn btn-warning col-md-12" %>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+  <br><br>
 </div>

@@ -44,7 +44,7 @@ h2.register{
   font-family: BebasKai;
   font-variant: normal;
  }
-
+/*
 .form-control.form-control-sm{
   background-color: transparent;
 }
@@ -69,7 +69,20 @@ input#user_current_password.form-control.form-control-sm{
 input#user_remember_me{
   background-image: url(http://csscheckbox.com/checkboxes/lite-cyan-check.png);
 }
+*/
 
+i.fas.fa-trash{
+  color: black;
+}
+i.fas.fa-edit{
+  color: black;
+}
+tr:nth-child(odd) {
+    background-color:#f2f2f2;
+}
+tr:nth-child(even) {
+    background-color:#fbfbfb;
+}
 
 @font-face {
     font-family: BebasKai;
@@ -77,15 +90,10 @@ input#user_remember_me{
 }
 
 
-#backlogin{
-  background-image: url('backlogin.jpg');
-}
-#loginback{
-  background-image: url('loginback.jpg');
-}
-
 .showuser {
-            margin-top: 8px;}
+  margin-top: 8px;
+  color: white;
+}
 
 #logincenter{
               text-align: center;}
