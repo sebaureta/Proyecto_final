@@ -5,9 +5,9 @@
   <ul class=" navbar-nav">
     <% if user_signed_in? %>
       <% if current_user.avatar.attached? %>
-    <li class = "showuser btn">  Hola, <%= current_user.name %> <%= image_tag current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle" %></li>
+    <li class = "showuser btn"><%= current_user.name %> <%= image_tag current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle" %></li>
       <% else %>
-    <li class = "showuser btn">  Hola,    <%= image_tag gravatar_image_url(current_user.email, size: 50), class: "rounded-circle" %></li>
+    <li class = "showuser btn"><%= image_tag gravatar_image_url(current_user.email, size: 50), class: "rounded-circle" %></li>
       <% end %>
     <% end %>
   </ul>

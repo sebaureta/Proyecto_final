@@ -1,31 +1,5 @@
+<%= render 'products/carousel' %>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="d-flex justify-content-center">Productos</h2> <br>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= image_tag "carouseloferta1.jpg", class: "d-block w-100" %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag "carouseloferta1.jpg", class: "d-block w-100" %>
-            </div>
-            <div class="carousel-item">
-              <%= image_tag "carouseloferta1.jpg", class: "d-block w-100" %>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
-        </div>
-
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-2">
         <br>
@@ -47,7 +21,8 @@
                   <p class="prodname"> <%= product.name %> </p>
                   <p class="precio"> Precio: $ <%= product.price %> </p>
                   <% if user_signed_in?%>
-                  <%= link_to 'Agregar al Carro', product_orders_path(product), class: 'btn btn-success col-md-12', method: :post %>
+                  <li class="btn">  <%= link_to product_orders_path(product), class: 'btn btn-success col-md-12', method: :post do %>
+                        <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %></li>
                   <% end %>
                 </div>
               </div>
