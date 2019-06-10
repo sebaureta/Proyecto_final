@@ -2,8 +2,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="d-flex justify-content-center col-md-6">
+      <span class="border border-secondary">
       <%= image_tag @product.image.variant(resize: "300x300!"), class: "img-fluid"%>
+      </span>
     </div>
     <div class="col-md-6">
       <p>
@@ -27,8 +29,10 @@
           <%= category.name %>
         <% end %>
       </p>
-      <%= link_to 'Agregar al Carro', product_orders_path(@product), class: 'btn btn-success col-md-8', method: :post %><br>
-      <%= link_to 'Volver', products_path , class: "btn btn-warning col-md-8"  %>
+      <%= link_to product_orders_path(@product), class: 'btn btn-success col-md-8', method: :post do %>
+        <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %>
+      <%= link_to products_path, class: 'btn btn-warning col-md-8', method: :post do %>
+        <i class="fas fa-undo-alt"></i> Volver<% end %>
     </div>
 </div>
 </div>
