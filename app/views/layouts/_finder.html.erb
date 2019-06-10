@@ -1,0 +1,4 @@
+<%= form_tag({controller: 'products', action: "index"}, method: :get) do %>
+<%= text_field_tag 'searchbox', params[:searchbox],:placeholder => "Busca por producto...", :size => 20 %>
+<%= submit_tag "Buscar", :name => nil, class:"btn btn-outline-success" %>
+<% end %>
