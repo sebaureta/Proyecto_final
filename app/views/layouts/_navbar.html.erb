@@ -11,8 +11,10 @@
       <% end %>
     <% end %>
   </ul>
-
-  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+  <%= form_tag({controller: 'products', action: "index"}, method: :get) do %> <%= text_field_tag 'searchbox', params[:searchbox] %> 
+  <%= submit_tag "Buscar", :name => nil, class:"btn btn-outline-success" %>
+  <% end %>
+  <div class="navbar-collapse collapse order-3 dual-collapse2" id="navbarSupportedContent">
     <ul class=" navbar-nav ml-auto">
       <% if user_signed_in? %>
         <% if current_user.admin? %>

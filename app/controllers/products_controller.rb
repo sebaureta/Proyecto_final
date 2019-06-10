@@ -1,17 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  ActionController::Parameters.permit_all_parameters = true
   # GET /products
   # GET /products.json
   def index
   #  @productsi = Product.all.page(params[:page])
-  #  @categories = Category.all
-
-  @products = []
-  if params[:category]
-    @products = Category.find_by(name: params[:category]).products
-  else
-    @products = Product.all.page(params[:page])
-  end
+  #  @categories = Category.
+    if params[:category]
+      @products = Category.find_by(name: params[:category]).products
+    elsif params[:searchbox]
+      @products = Product.search(params[:searchbox])
+    else
+      @products = Product.all.page(params[:page])
+    end
     @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
@@ -80,6 +81,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:name, :description, :price, :image, :categories)
+    params.require(:product).permit(:name, :description, :price, :image, :categories, :searchbox)
   end
 end

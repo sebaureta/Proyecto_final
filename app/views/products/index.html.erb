@@ -1,14 +1,7 @@
   <div class="container">
-    <h1>Products</h1> <br>
     <div class="row">
-      <div class="col-md-2">
-        <% Category.all.each do |categories|%>
-          <li>
-            <%= link_to categories.name, products_path(category: categories.name)%>
-          </li>
-        <% end %>
-      </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
+        <h2 class="d-flex justify-content-center">Productos</h2> <br>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -30,16 +23,21 @@
             <span class="sr-only">Siguiente</span>
           </a>
         </div>
+
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
-
+        <br>
+        <h4> Filtrar por Categorias:</h4>
+        <li><%= link_to 'Inicio', root_path, class: "categories" %></li>
+        <% Category.all.each do |categories|%>
+          <li><%= link_to categories.name, products_path(category: categories.name), class: "categories"%></li>
+        <% end %>
       </div>
       <div class="col-md-10">
       <div class="row">
-        <% @products.each_slice(4) do |row| %>
-          <% row.each do |product| %>
+        <% @products.each do |product| %>
             <div id="animated-example" class="animated bounceIn">
               <div class="card col-md-12">
                 <%= link_to product do %>
@@ -55,9 +53,8 @@
               </div>
             </div>
           <% end %>
-          <div class="w-100"> </div>
-        <% end %>
         </div>
+      </div>
       </div>
     </div>
   </div>

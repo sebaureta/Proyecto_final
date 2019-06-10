@@ -11,13 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="field register">
+    <%= form.label :Nombre_de_la_categoria %>
     <%= form.text_field :name, class: "form-control form-control-sm" %> <br>
   </div>
 
   <div class="actions">
-    <%= form.submit "Agregar", :class => "btn btn-outline-success col-md-12" %>
-    <%= link_to 'Volver', admins_path, class: "btn btn-outline-secondary col-md-12" %><br>
+    <%= form.submit "Agregar", :class => "btn btn-success col-md-12" %>
   </div>
+  <br>
+  <div class="actions">
+    <%= link_to 'Volver', admins_path, class: "btn btn-warning col-md-12" %>
+  </div>
+  <br><br>
 <% end %>

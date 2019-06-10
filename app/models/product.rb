@@ -22,4 +22,10 @@ class Product < ApplicationRecord
       ProductCategory.create(category_id: category_id, product_id: self.id)
     end
   end
+
+  def self.search(search)
+    if search
+      where('lower(name) LIKE ?', "%#{search}%")
+    end
+  end
 end

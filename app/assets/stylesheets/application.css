@@ -30,8 +30,18 @@
   color: white;
   font-family: BebasKai;
 }
+
+.categories {
+  color: grey;
+  font-family: BebasKai;
+}
 h2.register{
  text-align: center;
+}
+
+h4 {
+  color: grey;
+  font-family: BebasKai;
 }
 
 .precio{
@@ -94,10 +104,6 @@ tr:nth-child(even) {
   margin-top: 8px;
   color: white;
 }
-
-#logincenter{
-              text-align: center;}
-
 
 .card {
         width: 15rem;
