@@ -4,6 +4,7 @@
 
     </div>
     <div class="col-md-6">
+      <% if @orders.empty? == false  %>
       <table class="table">
         <% @orders.each do |order| %>
             <tr>
@@ -19,8 +20,14 @@
           <td></td>
         </tr>
       </table>
-
       <%= link_to 'Volver', products_path, class: "btn btn-warning col-md-12" %>
+      <% else %>
+      <div class=" justify-content-center">
+        <h3>Lo lamento, tu carro está vacio :( </h3>
+        <h4>Puedes agregar productos presionando el botón:  </h4>
+          <%= link_to 'Volver', products_path, class: "btn btn-warning col-md-12" %>
+      </div>
+        <% end %>
       </div>
     <div class="col-md-3">
 
