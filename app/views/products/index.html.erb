@@ -5,8 +5,8 @@
         <br>
         <h4> Filtrar por Categorias:</h4>
         <li><%= link_to 'Inicio', root_path, class: "categories" %></li>
-        <% Category.all.each do |categories|%>
-          <li><%= link_to categories.name, products_path(category: categories.name), class: "categories"%></li>
+        <% @categories.each do |cate|%>
+          <li><%= link_to cate[0], products_path(category: cate[0]), class: "categories"%></li>
         <% end %>
       </div>
       <div class="col-md-10">
@@ -21,8 +21,8 @@
                   <p class="prodname"> <%= product.name %> </p>
                   <p class="precio"> Precio: $ <%= product.price %> </p>
                   <% if user_signed_in?%>
-                  <li class="btn">  <%= link_to product_orders_path(product), class: 'btn btn-success col-md-12', method: :post do %>
-                        <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %></li>
+                  <li class="btn">  <%= link_to product_orders_path(product), class: 'btn btn-success col-md-12', method: :post, remote: true do %>
+                      <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %></li>
                   <% end %>
                 </div>
               </div>

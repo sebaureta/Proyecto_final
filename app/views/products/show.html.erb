@@ -1,11 +1,8 @@
 <p id="notice"><%= notice %></p>
-
 <div class="container">
   <div class="row">
     <div class="d-flex justify-content-center col-md-6">
-      <span class="border border-secondary">
-      <%= image_tag @product.image.variant(resize: "300x300!"), class: "img-fluid"%>
-      </span>
+      <%= image_tag @product.image.variant(resize: "200x200!"), class: "img-fluid"%>
     </div>
     <div class="col-md-6">
       <p>
@@ -30,7 +27,7 @@
         <% end %>
       </p>
       <%= link_to product_orders_path(@product), class: 'btn btn-success col-md-8', method: :post do %>
-        <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %>
+        <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %> <br>
       <%= link_to products_path, class: 'btn btn-warning col-md-8', method: :post do %>
         <i class="fas fa-undo-alt"></i> Volver<% end %>
     </div>

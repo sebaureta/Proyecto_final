@@ -17,11 +17,14 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Agregar", :class => "btn btn-success col-md-12" %>
+    <%= button_tag type: 'submit', class: "btn btn-success col-md-12", id: "register-button" do %>
+        <i class="fa fa-plus"> Agregar</i> <% end %>
   </div>
+
   <br>
   <div class="actions">
-    <%= link_to 'Volver', admins_path, class: "btn btn-warning col-md-12" %>
+    <%= link_to admins_path, class: 'btn btn-warning col-md-12' do %>
+      <i class="fas fa-undo-alt"></i> Volver<% end %>
   </div>
   <br><br>
-<% end %>
+<% end %>>

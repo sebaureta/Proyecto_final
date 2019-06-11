@@ -1,7 +1,7 @@
 # model products
 class Product < ApplicationRecord
   # pages per filter
-  paginates_per 12
+#  paginates_per 12
   has_many :orders, dependent: :delete_all
   has_many :users, through: :orders
 

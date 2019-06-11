@@ -13,7 +13,8 @@ class ProductsController < ApplicationController
     else
       @products = Product.all.page(params[:page])
     end
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
+
+    @categories = Category.pluck(:name,:id)
   end
 
   # GET /products/1
