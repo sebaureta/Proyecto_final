@@ -26,4 +26,14 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def clearcart
+    @orders = current_user.orders
+    @orders.clear
+    respond_to do |format|
+      format.js
+      format.html { redirect_to orders_path, notice: 'Carro Limpio!.' }
+      format.json { head :no_content }
+    end
+  end
 end

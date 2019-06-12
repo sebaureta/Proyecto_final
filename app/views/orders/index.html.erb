@@ -1,20 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-
+      <% if @orders.empty? == false %>
+          <li class="btn"> <%= link_to clearcart_order_path(@orders), method: :put, data: {confirm: "Estás seguro de borrar todos los elementos de tu carro?"}, class: "btn btn-danger" do %>
+             <i class="far fa-times-circle"> Limpiar Carro</i><% end %> </li>
+      <% end %>
     </div>
     <div class="col-md-6">
       <% if @orders.empty? == false  %>
       <table class="table">
         <% @orders.each do |order| %>
             <tr>
-              <td>  <%= order.product.name %> </td>
+              <td>  <%= image_tag order.product.image.variant(resize: "50x50!") %> </td>
+              <td>  <%= order.product.name %> <br>
+                <h6><%= order.product.description %> </h6> </td>
               <td>$ <%= order.product.price %> </td>
               <td>  <%= link_to order, method: :delete, data: {confirm: "Estás seguro?"} do %>
                    <i class="fas fa-trash"></i><% end %></td>
             </tr>
         <% end %>
         <tr>
+          <td></td>
           <td> Total: </td>
           <td>$ <%= @orders.map{|order| order.product.price }.sum %></td>
           <td></td>

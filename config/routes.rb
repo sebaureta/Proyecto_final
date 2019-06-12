@@ -14,6 +14,13 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index,:destroy]
 
+  resources :orders do
+    member do
+        patch :clearcart
+        put :clearcart
+      end
+  end
+
   resources :categories, except: [:show]
 
   resources :product_categories do
