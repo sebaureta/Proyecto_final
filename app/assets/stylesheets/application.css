@@ -263,24 +263,25 @@ footer {
     animation-name: bounceIn;
 }
 
-/*-------------------*/
+/*------Sidebar cart-------------*/
 .wrapper {
   display: flex !important;
-  justify-content: space-between;
-}
 
+}
 
 
 .sidebar {
   margin-top: 10px;
   background-color: white;
   height: 50vh;
-}
-
-
-
-.sidebar {
   position: -webkit-sticky !important;
   position: sticky!important;
   top: 15%!important;
+}
+
+#cartelement{
+  margin-right: -9px !important;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

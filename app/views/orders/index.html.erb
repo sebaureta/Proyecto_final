@@ -1,27 +1,33 @@
 <div class="container">
   <div class="row wrapper">
     <div class="col-md-8 main">
+      <div id="cartelement" class="row">
+        <div id ="backgrey" class=" col-md-12">
+          <h3><strong>Carro de Compras:</strong> ( <%= @orders.count %> productos )</h3>
+        </div>
+      </div>
+      <br>
       <% if @orders.empty? == false  %>
         <% @orders.each do |order| %>
-        <div id="backgrey" class="row">
+        <div id="cartelement" id="backgrey" class="row">
             <div class="col-md-3">
-              <%= image_tag order.product.image.variant(resize: "50x50!") %>
+              <%= image_tag order.product.image.variant(resize: "70x70!") %>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-5">
               <%= order.product.name %> <br>
-            </div>
-            <div class="col-md-2">
-               <%= order.product.description %>
+              <%= order.product.description %>
             </div>
             <div class="col-md-2">
                $<%= order.product.price %>
             </div>
             <div class="col-md-2">
               <%= link_to order, method: :delete, data: {confirm: "Estás seguro?"} do %>
-                   <i class="fas fa-trash"></i><% end %>
+                   <i class="fas fa-trash"> </i><% end %>
+                   Quitar
             </div>
+
           </div>
-        <br><br>
+        <br>
         <% end %>
       <% else %>
         <div class="col-md-12 justify-content-center">
