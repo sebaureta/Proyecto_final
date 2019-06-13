@@ -9,57 +9,46 @@
       <br>
       <% if @orders.empty? == false  %>
         <% @orders.each do |order| %>
-        <div id="cartelement" id="backgrey" class="row">
-            <div class="col-md-3">
-              <%= image_tag order.product.image.variant(resize: "70x70!") %>
+        <div id="cartelement" id="backgrey" class="row content">
+            <div class="col-md-3 d-flex justify-content-center">
+              <%= image_tag order.product.image.variant(resize: "100x100!") %>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 d-flex justify-content-start">
               <%= order.product.name %> <br>
               <%= order.product.description %>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 d-flex justify-content-start">
                $<%= order.product.price %>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 d-flex justify-content-start">
               <%= link_to order, method: :delete, data: {confirm: "Estás seguro?"} do %>
-                   <i class="fas fa-trash"> </i><% end %>
+                   <i class="fas fa-trash">  </i>  <% end %>
                    Quitar
             </div>
-
           </div>
         <br>
         <% end %>
       <% else %>
-        <div class="col-md-12 justify-content-center">
-          <h3>Lo lamento, tu carro está vacio :( </h3>
-          <h4>Puedes agregar productos presionando el botón:  </h4>
+        <div id="cartelement" id="backgrey" class="col-md-12">
+          <h4>Carro vacio! </h4>
+          <%= link_to "Sigue Comprando...", products_path, class: "btn btn-warning col-md-12" %>
         </div>
       <% end %>
     </div>
-    <div class="col-md-4 sidebar">
       <% if @orders.empty? == false %>
-        <div class="">
+      <div class="col-md-4 sidebar">
+        <div>
           <h4>Resumen de tu Orden:</h4>
-          <strong>TOTAL: $</strong><%= @orders.map{|order| order.product.price }.sum %>
+          <strong>TOTAL: $ </strong><%= @orders.map{|order| order.product.price }.sum %>
         </div>
         <br>
         <%= link_to clearcart_order_path(@orders), method: :put, data: {confirm: "Estás seguro de borrar todos los elementos de tu carro?"}, class: "btn btn-danger col-md-12" do %>
-          <i class="far fa-times-circle"> Limpiar Carro</i>
-        <% end %>
-      <% end %>
+          <i class="far fa-times-circle"> Limpiar Carro</i><% end %>
         <%= link_to products_path, class: "btn btn-warning col-md-12" do %>
-          <i class="fas fa-undo-alt"> Volver</i>
-        <% end %>
+          <i class="fas fa-undo-alt"> Volver</i><% end %>
         <%= link_to "", class: "btn btn-success col-md-12" do %>
-          <i class="fas fa-cart-plus"> Completa tu compra</i>
-        <% end %>
-    </div>
+          <i class="fas fa-cart-plus"> Completa tu compra</i><% end %>
+        </div>
+      <% end %>
   </div>
 </div>
-
-
-  <script type="text/javascript">
-    var sidebar = document.getElementById('sidebar');
-    Stickyfill.add(sidebar);
-
-  </script>
