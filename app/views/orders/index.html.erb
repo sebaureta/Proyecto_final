@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <% if @orders.empty? == false %>
-          <li class="btn"> <%= link_to clearcart_order_path(@orders), method: :put, data: {confirm: "Estás seguro de borrar todos los elementos de tu carro?"}, class: "btn btn-danger" do %>
-             <i class="far fa-times-circle"> Limpiar Carro</i><% end %> </li>
-      <% end %>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
       <% if @orders.empty? == false  %>
-      <table class="table">
-        <% @orders.each do |order| %>
-            <tr>
+        <table class="table">
+          <tr>
+            <td></td>
+            <td>Producto</td>
+            <td>Precio</td>
+            <td>Quitar</td>
+          </tr>
+          <% @orders.each do |order| %>
+          <tr>
               <td>  <%= image_tag order.product.image.variant(resize: "50x50!") %> </td>
               <td>  <%= order.product.name %> <br>
                 <h6><%= order.product.description %> </h6> </td>
@@ -18,26 +18,29 @@
               <td>  <%= link_to order, method: :delete, data: {confirm: "Estás seguro?"} do %>
                    <i class="fas fa-trash"></i><% end %></td>
             </tr>
-        <% end %>
-        <tr>
-          <td></td>
-          <td> Total: </td>
-          <td>$ <%= @orders.map{|order| order.product.price }.sum %></td>
-          <td></td>
-        </tr>
-      </table>
-      <%= link_to 'Volver', products_path, class: "btn btn-warning col-md-12" %>
+          <% end %>
+        </table>
       <% else %>
-      <div class=" justify-content-center">
-        <h3>Lo lamento, tu carro está vacio :( </h3>
-        <h4>Puedes agregar productos presionando el botón:  </h4>
-          <%= link_to 'Volver', products_path, class: "btn btn-warning col-md-12" %>
-      </div>
-        <% end %>
-      </div>
-    <div class="col-md-3">
-
+        <div class=" justify-content-center">
+          <h3>Lo lamento, tu carro está vacio :( </h3>
+          <h4>Puedes agregar productos presionando el botón:  </h4>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <% if @orders.empty? == false %>
+        <div class="">
+          <h4>Resumen de tu Orden:</h4>
+          <strong>TOTAL: $</strong><%= @orders.map{|order| order.product.price }.sum %>
+        </div>
+        <br>
+        <%= link_to clearcart_order_path(@orders), method: :put, data: {confirm: "Estás seguro de borrar todos los elementos de tu carro?"}, class: "btn btn-danger col-md-12" do %>
+          <i class="far fa-times-circle"> Limpiar Carro</i><% end %>
+      <% end %>
+        <%= link_to products_path, class: "btn btn-warning col-md-12" do %>
+          <i class="fas fa-undo-alt"> Volver</i><% end %>
+        <%= link_to "", class: "btn btn-success col-md-12" do %>
+          <i class="fas fa-cart-plus"> Completa tu compra</i><% end %>
     </div>
   </div>
-    <br><br>
 </div>
