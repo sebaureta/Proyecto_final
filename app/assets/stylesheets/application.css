@@ -17,6 +17,7 @@
 
  body{
    font-family: Montserrat-Regular !important;
+   background-color: #F5F5DC !important;
  }
 
  .formbtn{
@@ -36,6 +37,9 @@
    max-height: 200px !important;
  }
 
+#backgrey{
+  background-color: white;
+}
 
 #register {
   background-color:rgba(25,76,72,0.6);
@@ -257,4 +261,26 @@ footer {
 
 .bounceIn {
     animation-name: bounceIn;
+}
+
+/*-------------------*/
+.wrapper {
+  display: flex !important;
+  justify-content: space-between;
+}
+
+
+
+.sidebar {
+  margin-top: 10px;
+  background-color: white;
+  height: 50vh;
+}
+
+
+
+.sidebar {
+  position: -webkit-sticky !important;
+  position: sticky!important;
+  top: 15%!important;
 }
