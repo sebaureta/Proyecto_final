@@ -1,3 +1,4 @@
+config.assets.paths << Rails.root.join("app","assets","fonts")
 require_relative 'boot'
 
 require 'rails/all'
