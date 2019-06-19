@@ -27,8 +27,8 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
+        format.html { redirect_to admins_path, notice: 'Category was successfully created.' }
+        format.json { render :new, status: :created, location: @category }
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
