@@ -12,6 +12,8 @@ class Ability
       can :create, Order
       can :destroy, Order
       can :clearcart, Order
+      can :index, Product
+      can :show, Product
     end
   end
 end

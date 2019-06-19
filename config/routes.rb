@@ -21,6 +21,13 @@ Rails.application.routes.draw do
       end
   end
 
+  resources :billings, only: [:index] do
+    collection do
+      get 'pre_pay'
+      get 'execute'
+    end
+  end
+
   resources :categories, except: [:show]
 
   resources :product_categories do

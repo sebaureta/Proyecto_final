@@ -15,6 +15,10 @@ class OrdersController < ApplicationController
 
   def index
     @orders = current_user.orders
+    @cont = []
+    @orders.each do |count|
+    @cont << count if count.payed == false
+    end
   end
 
   def destroy
@@ -36,4 +40,5 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

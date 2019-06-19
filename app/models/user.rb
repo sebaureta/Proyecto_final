@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :orders
   has_many :products, through: :orders
+  has_many :billings
 end

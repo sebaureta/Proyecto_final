@@ -34,7 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-#amazon s3
+# paypal gems
+gem 'paypal-sdk-rest'
+# amazon s3
 gem "aws-sdk-s3"
 # SweetAlert2
 gem 'sweetalert2'

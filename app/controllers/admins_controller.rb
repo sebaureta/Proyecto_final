@@ -1,7 +1,6 @@
 # prohibir acceder a rutas que no corresponden
 class AdminsController < ApplicationController
   before_action :authenticate_user!
-
   def index
     @products = Product.all.page(params[:page])
     authorize! :index, User

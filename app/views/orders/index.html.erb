@@ -3,21 +3,22 @@
     <div class="col-md-8 main">
       <div id="cartelement" class="row">
         <div id ="backgrey" class=" col-md-12">
-          <h3><strong>Carro de Compras:</strong> ( <%= @orders.count %> productos )</h3>
+          <h3><strong>Carro de Compras:</strong> ( <%= @cont.count %> productos )</h3>
         </div>
       </div>
       <br>
-      <% if @orders.empty? == false  %>
-        <% @orders.each do |order| %>
-        <div id="cartelement" id="backgrey" class="row content">
+      <% if @cont.empty? == false  %>
+        <% @cont.each do |order| %>
+        <% if order.payed == false  %>
+        <div id="cartelement" id="backgrey" class="row content rounded">
             <div class="col-md-3 d-flex justify-content-center">
               <%= image_tag order.product.image.variant(resize: "100x100!") %>
             </div>
-            <div class="col-md-5 d-flex justify-content-start">
+            <div class="col-md-5 d-flex justify-content-center">
               <%= order.product.name %> <br>
               <%= order.product.description %>
             </div>
-            <div class="col-md-2 d-flex justify-content-start">
+            <div class="col-md-2 d-flex justify-content-center">
                $<%= order.product.price %>
             </div>
             <div class="col-md-2 d-flex justify-content-center">
@@ -26,6 +27,7 @@
             </div>
           </div>
         <br>
+        <% end  %>
         <% end %>
       <% else %>
         <div id="cartelement" id="backgrey" class="col-md-12">
@@ -34,18 +36,18 @@
         </div>
       <% end %>
     </div>
-      <% if @orders.empty? == false %>
-      <div class="col-md-4 sidebar">
+      <% if @cont.empty? == false %>
+      <div class="col-md-4 sidebar rounded">
         <div>
           <h4>Resumen de tu Orden:</h4>
-          <strong>TOTAL: $ </strong><%= @orders.map{|order| order.product.price }.sum %>
+          <strong>TOTAL: $ </strong><%= @cont.map{|order| order.product.price }.sum %>
         </div>
         <br>
-        <%= link_to clearcart_order_path(@orders), method: :put, data: {confirm: "Estás seguro de borrar todos los elementos de tu carro?"}, class: "btn btn-danger col-md-12" do %>
+        <%= link_to clearcart_order_path(@cont), method: :put, data: {confirm: "Estás seguro de borrar todos los elementos de tu carro?"}, class: "btn btn-danger col-md-12" do %>
           <i class="far fa-times-circle"> Limpiar Carro</i><% end %>
         <%= link_to products_path, class: "btn btn-warning col-md-12" do %>
           <i class="fas fa-undo-alt"> Volver</i><% end %>
-        <%= link_to "", class: "btn btn-success col-md-12" do %>
+        <%= link_to pre_pay_billings_path, class: "btn btn-success col-md-12"  do %>
           <i class="fas fa-cart-plus"> Completa tu compra</i><% end %>
         </div>
       <% end %>

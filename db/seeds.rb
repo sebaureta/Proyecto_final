@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+u1 = User.new(name: 'Sebastian', email: 'sureta@outlook.es', admin: true, encrypted_password: "qweqwe")
+u1.avatar.attach(io: File.open('app/assets/images/seba.jpg'), filename: 'seba.jpg', content_type: 'image/jpg')
+u1.save
+
+u2 = User.new(name: 'Logan', email: 'logan@gato.cl', admin: false, encrypted_password: "qweqwe")
+u2.avatar.attach(io: File.open('app/assets/images/logan.jpg'), filename: 'logan.jpg', content_type: 'image/jpg')
+u2.save
+
+
 c1 = Category.new(name: 'Deportes')
 c1.save
 
