@@ -1,4 +1,6 @@
-<%= form_tag({controller: '/products', action: "index"}, method: :get, class: "formbtn") do %>
-<%= text_field_tag 'searchbox', params[:searchbox], placeholder: 'Busca por producto...', size: 20, class: 'form-control form-control-sm' %>
-<%= submit_tag "Buscar", name: nil, class:"btn btn-outline-success btnsearch" %>
-<% end %>
+<nav id="nav2" class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center">
+  <%= form_tag({controller: '/products', action: "index"}, method: :get, class: "formbtn") do %>
+  <%= text_field_tag 'searchbox', params[:searchbox], placeholder: 'Busca por producto...' %>
+  <%= submit_tag "Buscar", name: nil, class:"btn btn-outline-success btnsearch" %>
+  <% end %>
+</nav>
