@@ -15,7 +15,6 @@ u2 = User.new(name: 'Logan', email: 'logan@gato.cl', admin: false, encrypted_pas
 u2.avatar.attach(io: File.open('app/assets/images/logan.jpg'), filename: 'logan.jpg', content_type: 'image/jpg')
 u2.save
 
-
 c1 = Category.new(name: 'Deportes')
 c1.save
 
@@ -96,3 +95,28 @@ i13 = Product.new(name: 'Destiny 2', description: 'Juego PS4', price: 24990)
 i13.image.attach(io: File.open('app/assets/images/destiny2.jpeg'), filename: 'destiny2.jpeg', content_type: 'image/jpg')
 i13.categories = ["4"]
 i13.save
+
+i14 = Product.new(name: 'Fuerza Natural', description: 'Disco Gustavo Cerati', price: 9990)
+i14.image.attach(io: File.open('app/assets/images/fuerzanatural.jpg'), filename: 'fuerzanatural.jpg', content_type: 'image/jpg')
+i14.categories = ["3"]
+i14.save
+
+i15 = Product.new(name: 'Take of Your Pants & Jacket', description: 'Disco Blink 182', price: 9990)
+i15.image.attach(io: File.open('app/assets/images/toypay.jpeg'), filename: 'toypay.jpg', content_type: 'image/jpg')
+i15.categories = ["3"]
+i15.save
+
+i16 = Product.new(name: 'Conspiration of One', description: 'Disco The Offspring', price: 9990)
+i16.image.attach(io: File.open('app/assets/images/conspiration.jpeg'), filename: 'conspiration.jpeg', content_type: 'image/jpg')
+i16.categories = ["3"]
+i16.save
+
+i17 = Product.new(name: 'Concentrador USB', description: 'Adaptador multiples usb', price: 5990)
+i17.image.attach(io: File.open('app/assets/images/usb.jpeg'), filename: 'usb.jpeg', content_type: 'image/jpg')
+i17.categories = ["5"]
+i17.save
+
+i17 = Product.new(name: 'Control Remoto', description: 'Control Universal', price: 8990)
+i17.image.attach(io: File.open('app/assets/images/controlremoto.jpg'), filename: 'controlremoto.jpg', content_type: 'image/jpg')
+i17.categories = ["5"]
+i17.save
