@@ -11,27 +11,29 @@
 </div>
   <% else %>
   <div class="container">
-    <div id="cartelement" id="backgrey" class="col-md-12 justify-content-center">
-    <table>
-      <tr class="border">
-        <th class="centerth border">Fecha de Compra</th>
-        <th class="centerth border">Productos</th>
-        <th class="centerth border">Método de Pago</th>
-        <th class="centerth border">Monto Pagado</th>
-      </tr>
-        <% @billings.each do |billing| %>
+    <div id="cartelement" id="backgrey" class="col-md-12">
+      <div class="centerTable">
+        <table>
           <tr class="border">
-            <th class=" centerth border"><%= billing.created_at.strftime("%Y-%m-%d") %></th>
-            <th class="border"><% billing.orders.each do |order| %>
-              <%= image_tag order.product.image.variant(resize: "20x20!") %>
-                <%= order.product.name %> <br>
-            <% end %></th>
-            <th class="centerth border"><%= billing.payment_method %></th>
-            <th class="centerth border">$<%= billing.amount %></th>
+            <th class="centerth border">Fecha de Compra</th>
+            <th class="centerth border">Productos</th>
+            <th class="centerth border">Método de Pago</th>
+            <th class="centerth border">Monto Pagado</th>
           </tr>
-        <% end %>
-      <tr>
-    </table>
+            <% @billings.each do |billing| %>
+              <tr class="border">
+                <th class=" centerth border"><%= billing.created_at.strftime("%Y-%m-%d") %></th>
+                <th class="border"><% billing.orders.each do |order| %>
+                                    <%= image_tag order.product.image.variant(resize: "20x20!") %>
+                                    <%= order.product.name %> <br>
+                                    <% end %></th>
+                <th class="centerth border"><%= billing.payment_method %></th>
+                <th class="centerth border">$<%= billing.amount %></th>
+              </tr>
+            <% end %>
+          <tr>
+        </table>
+       </div>
+      </div>
+    </div>
   <% end %>
-  </div>
-</div>
