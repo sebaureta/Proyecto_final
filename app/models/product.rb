@@ -5,8 +5,8 @@ class Product < ApplicationRecord
   has_many :orders, dependent: :delete_all
   has_many :users, through: :orders
 
-  has_many :product_categories
-  has_many :categories, through: :product_categories
+  has_many :product_categories, dependent: :destroy
+  has_many :categories, through: :product_categories, dependent: :destroy
 
   has_one_attached :image
 
