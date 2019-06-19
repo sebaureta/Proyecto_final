@@ -26,9 +26,9 @@
           <%= category.name %>
         <% end %>
       </p>
-      <%= link_to product_orders_path(@product), class: 'btn btn-success col-md-8', method: :post do %>
+      <%= link_to product_orders_path(@product), class: 'btn btn-success col-md-8',remote: true, method: :post do %>
         <i class="fas fa-plus"></i><i class="fas fa-shopping-cart"></i> Agregar<% end %> <br>
-      <%= link_to products_path, class: 'btn btn-warning col-md-8', method: :post do %>
+      <%= link_to products_path, class: 'btn btn-warning col-md-8' do %>
         <i class="fas fa-undo-alt"></i> Volver<% end %>
     </div>
 </div>
